@@ -1,47 +1,80 @@
-# Test Report TR-ARGUS-CV-001: Green-X Identification and Localization (SITL)
+# Test Report: Autonomous Green-X Target Identification and Localization
 
 | | |
 |---|---|
-| **Procedure** | TP-ARGUS-CV-001 Rev A |
-| **Tester** | Simon Han |
-| **Date(s)** | Nov.15.2026 |
-| **ArduPilot / Gazebo** | Copter 4.6.3 SITL / Gazebo Harmonic (`Drone_Sim_Docker`) |
+| **Program** | NSDS VIP – ARGUS (C-UASC), Autonomy & Perception |
+| **Author** | Simon Han |
+| **Test case** | CUA-TC-003 |
+| **Requirement** | CUA-PER-002 |
+| **Procedure** | TP-ARGUS-CV-001 (`TEST_PROCEDURE.md`) |
+| **Test date** | 11/15/2026 (simulation) |
+| **Status** | Simulation complete; field flight not yet run |
 
-## 1. Summary
-[ Two or three sentences: did the capability meet the requirements? Which runs passed or failed, and the headline numbers (final error, detection rate). ]
+## 1. Objective
 
-## 2. Results
+Verify that the drone can autonomously search for the Package Recovery target (a large white target with a green X), ignore look-alike targets, and report its GPS position accurately enough to score the mission. The C-UASC rules require the position within 9 m and within 10 minutes, without flying below 20 ft AGL.
 
-| Run | Alt (m) | Final error (m) | TC1 ≤ 3 m | TC2 det. rate ≥ 80 % | TC3 FP ≤ 2 % | TC4 ≥ 6.1 m | TC5 ≤ 600 s | TC6 ≥ 5 Hz | Overall |
-|---|---|---|---|---|---|---|---|---|---|
-| R1 | 6.5 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
-| R2 | 8.0 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
-| R3 | 10.0 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
+## 2. System under test
 
-*Figures to insert:* `all_runs_error.png`, one `R*_map.png`, one `R*_timeline.png`, one detection snapshot from `runs/R*/snapshots/`.
+- **Detector:** `green_cross_detector.py` v2. It checks colour (green), then shape (four arms about 90° apart, white sheet between the arms), so it rejects grass, the red bullseye and green squares.
+- **Localization:** `geo.py`. The target's center pixel is projected to the ground using the camera model, the drone's attitude and altitude, then converted to latitude/longitude. Many detections are combined into one estimate.
+- **Mission:** `run_test.py`. Autonomous lawnmower search at 3 m/s, a confirmation pass over the estimate, then landing (pymavlink).
+- **Simulator:** ArduPilot Copter 4.6.3 SITL with Gazebo Harmonic (`iris_with_gimbal`, downward camera).
 
-## 3. Calibration run (R0)
-[ The `--calibrate R0` output: the median error for each mount, which mount was chosen, and why. ]
+## 3. Pass/fail criteria (each run)
 
-## 4. Deviations from the procedure
-[ Anything done differently: re-runs, the sim restarted, a different gimbal pitch, aborts and their reasons. Write "None" if there were none. ]
+| ID | Criterion | Pass if |
+|---|---|---|
+| TC1 | Reported position error | ≤ 3 m (rule: 9 m) |
+| TC2 | Detection rate when the target is fully in view | ≥ 80 % |
+| TC3 | False detections (decoys or background) | ≤ 2 % |
+| TC4 | Lowest altitude while searching | ≥ 20 ft (6.1 m) AGL |
+| TC5 | Time from takeoff to reported position | ≤ 10 min |
 
-## 5. Analysis
-- **Localization error sources:** [ video latency, attitude, pixel size at each altitude, flat-ground assumption. Which one dominated, based on how the error changes with altitude? ]
-- **Detection:** [ frames missed, and why (reject reasons in `frames.csv`). Were any decoys accepted? ]
-- **Failures:** [ for every FAIL: the root cause and what would fix it ]
+## 4. Test matrix
 
-## 6. PD 5 detector metric (labeled dataset)
-*From `eval_dataset.py` and `compare_versions.py` on your machine.*
+| Run | Purpose | Altitude | Target |
+|---|---|---|---|
+| R0 | Camera mount calibration (not scored) | 8 m | Fixed position |
+| R1 | Lowest legal altitude | 6.5 m (21 ft) | Moved and rotated, decoys in view |
+| R2 | Nominal | 8 m (26 ft) | Moved and rotated, decoys in view |
+| R3 | Highest altitude in the sim | 10 m (33 ft) | Moved and rotated, decoys in view |
 
-| Version | Images | Precision | Recall | F1 | Median loc. error (m) |
-|---|---|---|---|---|---|
-| v1 | [ ] | [ ] | [ ] | [ ] | [ ] |
-| v2 | [ ] | [ ] | [ ] | [ ] | [ ] |
+A red bullseye and a green square were placed in every scored run as decoys.
 
-[ What changed from v1 to v2 and the effect on the numbers. Where recall drops (altitude bins), and the recommended search altitude for this camera. ]
+## 5. Results
 
-## 7. Conclusions and recommended next steps
-- [ Requirement status ]
-- [ e.g., bench test with the real ARGUS camera and a printed target; camera calibration; field test (TP section 13) ]
-- [ Confirm the real target dimensions with the competition organizers and update `SHEET_M` / `X_*` ]
+| Run | Position error | Detection rate | False detections | Lowest altitude | Time to position | Result |
+|---|---|---|---|---|---|---|
+| R1 | 0.05 m | 95.2 % | 0 / 96 | 6.31 m | 69 s | **PASS** |
+| R2 | 0.04 m | 91.4 % | 0 / 100 | 7.72 m | 62 s | **PASS** |
+| R3 | 0.04 m | 88.7 % | 0 / 103 | 9.58 m | 62 s | **PASS** |
+
+**All 3 runs passed all criteria.** The decoys were in the camera view during the runs and were never reported as the target.
+
+Full results, maps and timelines: [`results/runs/analysis/`](../results/runs/analysis/).
+
+## 6. Analysis
+
+- **Accuracy:** the final position error (0.04–0.05 m) is far inside the 3 m requirement and the 9 m rule. Single detections were off by a median of 0.3–0.6 m; combining about 100 detections into one estimate removed most of that error.
+- **Detection rate:** it fell slightly as altitude increased (95 % at 6.5 m, 89 % at 10 m), because the X covers fewer pixels when the drone is higher.
+- **Calibration:** run R0 compared 8 possible camera mountings. The correct one gave a median error of 0.52 m, against 1.4–4.6 m for the others.
+- **Problems found and fixed during testing:**
+  - The simulator sent no video because a video plugin was missing from the Docker image; `fix_sim_camera.sh` installs it.
+  - The camera pointed up and saw the drone's green propellers, causing false detections; the camera setup now checks that it is looking at the ground.
+  - The test froze with no error message; timeouts and clear error output were added.
+
+## 7. Limitations
+
+- These are simulation results. Real GPS error, wind, vibration and a real camera will make the error larger.
+- The simulator's geofence capped altitude at about 12 m (40 ft), so 60 ft was not tested.
+- The rules don't give the target size. The test assumed a 3 m white sheet with a green X.
+
+## 8. Conclusion and next steps
+
+The capability **passed in simulation** (3 of 3 runs), so it is ready to move to field testing:
+
+1. Calibrate the real ARGUS camera and replace the simulated camera model.
+2. Bench-check the detector with a printed green X under real lighting (`tools/green_cross_try.py`).
+3. Run the field part of CUA-TC-003 (steps 2–8): searches at 25, 40 and 60 ft over a surveyed green X with decoys.
+4. Record the field results in CUA-TC-003 and in the RVTM Verification Results for CUA-PER-002.
