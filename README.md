@@ -9,8 +9,6 @@ it in ArduPilot SITL + Gazebo with logs, analysis and pass/fail criteria.
 - **PD 5 – Computer vision:** OpenCV green-X detector (colour + shape), geolocation from the camera ray and the drone's attitude, a labeled-dataset evaluation (v1 vs v2), and a live webcam test tool.
 - **PD 7 – Flight test:** written test procedure, 3 autonomous SITL flights at 6.5 / 8 / 10 m with decoy targets, automatic log analysis against pass/fail criteria.
 
-No ROS: Python 3, OpenCV, pymavlink, Gazebo `gz` CLI.
-
 ## Results (real logs in `results/`)
 
 | Run | Altitude | Final position error | Detection rate | False positives | Result |
