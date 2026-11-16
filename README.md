@@ -1,4 +1,4 @@
-# ARGUS – Green X Target Detection & Localization (PD 5 + PD 7)
+# ARGUS – Green X Target Detection & Localization
 
 **Simon Han · Purdue NSDS VIP – ARGUS drone team (C-UASC) · Autonomy & Perception**
 
