@@ -1,0 +1,18 @@
+{
+  "run_id": "R1",
+  "estimate": {
+    "north_m": 22.050316866768902,
+    "east_m": 4.963127226780873,
+    "lat": -35.36306411863339,
+    "lon": 149.16529207146758,
+    "detections_used": 96,
+    "detections_total": 96,
+    "t_first_detection_s": 34.24775576591492,
+    "t_estimate_s": 75.27447390556335
+  },
+  "search_time_s": 44.15425086021423,
+  "mission_time_s": 110.07564401626587,
+  "frames_processed": 811,
+  "detections": 111,
+  "mount": "rot0"
+}

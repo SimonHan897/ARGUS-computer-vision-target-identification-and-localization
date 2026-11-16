@@ -1,0 +1,85 @@
+{
+  "run_id": "R1",
+  "connect": "udpin:127.0.0.1:14551",
+  "alt": 6.5,
+  "speed": 3.0,
+  "area_n": [
+    5.0,
+    35.0
+  ],
+  "area_e": [
+    -15.0,
+    15.0
+  ],
+  "overlap": 0.4,
+  "mount": "rot0",
+  "source": "gst",
+  "latency": 0.1,
+  "confirm_looks": 6.0,
+  "truth": "truth.json",
+  "show": true,
+  "camera": {
+    "width": 640,
+    "height": 480,
+    "hfov_rad": 2.0
+  },
+  "fx": 205.46963709898583,
+  "footprint_m": [
+    20.24630042051373,
+    15.184725315385297
+  ],
+  "lane_spacing_m": 9.110835189231178,
+  "detector": {
+    "min_target_area_px": 40.0,
+    "max_target_area_frac": 0.6,
+    "min_detection_confidence": 0.55,
+    "min_arm_score": 0.5,
+    "min_arm_regularity": 0.6,
+    "min_solidity": 0.3,
+    "max_solidity": 0.92,
+    "min_white_backing": 0.3,
+    "use_light_normalization": true,
+    "clahe_clip_limit": 2.0,
+    "clahe_tile_grid_size_px": 8,
+    "hsv_blur_kernel_px": 3,
+    "morph_open_px": 3,
+    "morph_close_px": 5,
+    "hsv_h_min": 35,
+    "hsv_h_max": 90,
+    "hsv_s_min": 70,
+    "hsv_s_max": 255,
+    "hsv_v_min": 40,
+    "hsv_v_max": 255,
+    "green_dominance_ratio": 1.25,
+    "green_difference_min": 25,
+    "green_min_channel": 60,
+    "ring_radius_fracs": [
+      0.55,
+      0.7,
+      0.85
+    ],
+    "ring_samples": 180,
+    "expected_arms": 4,
+    "backing_inner_frac": 0.3,
+    "backing_outer_frac": 0.85,
+    "backing_v_min": 150,
+    "backing_v_rel": 0.8,
+    "backing_s_max": 70,
+    "use_sheet_search": true,
+    "sheet_min_area_px": 150.0,
+    "sheet_close_px": [
+      7,
+      15,
+      31
+    ],
+    "refine_radius_px": 16.0,
+    "refine_scale": 4,
+    "refine_max_seeds": 8,
+    "use_line_search": false,
+    "line_min_len_frac": 0.04,
+    "line_max_gap_px": 10,
+    "line_min_angle_deg": 45.0,
+    "line_min_white": 0.45
+  },
+  "started": "2026-11-15T18:02:09.424818"
+}

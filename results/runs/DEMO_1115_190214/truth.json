@@ -1,0 +1,25 @@
+{
+  "target": {
+    "north_m": 28.0,
+    "east_m": -8.0,
+    "rot_deg": 35.0,
+    "lat": -35.363010571720444,
+    "lon": 149.1651492757751
+  },
+  "home": {
+    "lat": -35.3632621,
+    "lon": 149.1652374
+  },
+  "decoys": [
+    {
+      "name": "decoy_square",
+      "north_m": 36.0,
+      "east_m": -2.0
+    },
+    {
+      "name": "decoy_bullseye",
+      "north_m": 30.0,
+      "east_m": -18.0
+    }
+  ]
+}

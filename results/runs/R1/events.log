@@ -1,0 +1,34 @@
+[18:02:09] RUN R1: alt 6.5 m, speed 3.0 m/s, mount rot0, footprint 20.2 x 15.2 m, lane spacing 9.1 m
+[18:02:09] Connecting to udpin:127.0.0.1:14551 ...
+[18:02:10] Heartbeat from system 1 component 1
+[18:02:10] Waiting for GPS 3D fix and pre-arm checks ...
+[18:02:11] Ready. Home = -35.3632622, 149.1652374
+[18:02:14] camera stream OK (gst)
+[18:02:14] Setting mode GUIDED
+[18:02:14]   COMMAND_ACK MAV_CMD_DO_SET_MODE: MAV_RESULT_ACCEPTED
+[18:02:14]   AUTOPILOT: Arming motors
+[18:02:14]   COMMAND_ACK MAV_CMD_COMPONENT_ARM_DISARM: MAV_RESULT_ACCEPTED
+[18:02:15] Motors ARMED
+[18:02:15] TAKEOFF to 6.5 m
+[18:02:15]   COMMAND_ACK MAV_CMD_NAV_TAKEOFF: MAV_RESULT_ACCEPTED
+[18:02:25]   AUTOPILOT: EKF3 IMU0 MAG0 in-flight yaw alignment complete
+[18:02:25]   AUTOPILOT: EKF3 IMU1 MAG0 in-flight yaw alignment complete
+[18:02:27]   COMMAND_ACK MAV_CMD_DO_CHANGE_SPEED: MAV_RESULT_ACCEPTED
+[18:02:27] SEARCH: 8 waypoints, box N (5.0, 35.0) E (-15.0, 15.0)
+[18:02:32]   search waypoint 1/8 reached, detections so far 0
+[18:02:40]   search waypoint 2/8 reached, detections so far 0
+[18:02:43] FIRST DETECTION at t=34.2 s, est N +21.33 E +5.20 m
+[18:02:43]   search waypoint 3/8 reached, detections so far 1
+[18:02:50]   search waypoint 4/8 reached, detections so far 15
+[18:02:54]   search waypoint 5/8 reached, detections so far 15
+[18:03:01]   search waypoint 6/8 reached, detections so far 34
+[18:03:04]   search waypoint 7/8 reached, detections so far 34
+[18:03:12]   search waypoint 8/8 reached, detections so far 34
+[18:03:12] search estimate N +22.04 E +4.57 m from 34/34 detections
+[18:03:24] RESULT: target estimate -35.3630641, 149.1652921 (N +22.05 E +4.96 m, 96/96 detections)
+[18:03:30] Setting mode LAND
+[18:03:30]   AUTOPILOT: PrecLand: Failsafe Measures
+[18:03:30]   COMMAND_ACK MAV_CMD_DO_SET_MODE: MAV_RESULT_ACCEPTED
+[18:03:56]   AUTOPILOT: Disarming motors
+[18:03:59] Landed and DISARMED
+[18:03:59] RUN COMPLETE. Logs in runs/R1/  -> next: python3 analyze_runs.py

@@ -1,0 +1,173 @@
+{
+  "overall": {
+    "n": 600,
+    "TP": 379,
+    "FN": 35,
+    "FP": 10,
+    "TN": 162,
+    "precision": 0.9743,
+    "recall": 0.9155,
+    "f1": 0.944,
+    "center_px_err_median": 0.98,
+    "center_px_err_p95": 2.4,
+    "ground_err_m_median": 0.078,
+    "ground_err_m_p95": 0.197,
+    "ground_err_m_max": 0.505,
+    "partial_images": 16,
+    "partial_recall": 0.75,
+    "det_ms_median": 42.2,
+    "det_ms_p95": 103.2
+  },
+  "by": {
+    "altitude_m": {
+      "6.1-10": {
+        "n": 101,
+        "TP": 65,
+        "FN": 0,
+        "FP": 2,
+        "TN": 28,
+        "precision": 0.9701,
+        "recall": 1.0,
+        "f1": 0.9848
+      },
+      "10-15": {
+        "n": 111,
+        "TP": 75,
+        "FN": 3,
+        "FP": 1,
+        "TN": 30,
+        "precision": 0.9868,
+        "recall": 0.9615,
+        "f1": 0.974
+      },
+      "15-20": {
+        "n": 130,
+        "TP": 88,
+        "FN": 2,
+        "FP": 2,
+        "TN": 36,
+        "precision": 0.9778,
+        "recall": 0.9778,
+        "f1": 0.9778
+      },
+      "20-30": {
+        "n": 258,
+        "TP": 151,
+        "FN": 30,
+        "FP": 5,
+        "TN": 68,
+        "precision": 0.9679,
+        "recall": 0.8343,
+        "f1": 0.8961
+      }
+    },
+    "ground": {
+      "asphalt": {
+        "n": 234,
+        "TP": 158,
+        "FN": 11,
+        "FP": 0,
+        "TN": 55,
+        "precision": 1.0,
+        "recall": 0.9349,
+        "f1": 0.9664
+      },
+      "dirt": {
+        "n": 60,
+        "TP": 46,
+        "FN": 1,
+        "FP": 0,
+        "TN": 13,
+        "precision": 1.0,
+        "recall": 0.9787,
+        "f1": 0.9892
+      },
+      "grass": {
+        "n": 222,
+        "TP": 127,
+        "FN": 20,
+        "FP": 10,
+        "TN": 62,
+        "precision": 0.927,
+        "recall": 0.8639,
+        "f1": 0.8944
+      },
+      "mixed": {
+        "n": 84,
+        "TP": 48,
+        "FN": 3,
+        "FP": 0,
+        "TN": 32,
+        "precision": 1.0,
+        "recall": 0.9412,
+        "f1": 0.9697
+      }
+    },
+    "condition": {
+      "clean": {
+        "n": 119,
+        "TP": 83,
+        "FN": 4,
+        "FP": 2,
+        "TN": 28,
+        "precision": 0.9765,
+        "recall": 0.954,
+        "f1": 0.9651
+      },
+      "blur/motion": {
+        "n": 390,
+        "TP": 235,
+        "FN": 29,
+        "FP": 7,
+        "TN": 111,
+        "precision": 0.9711,
+        "recall": 0.8902,
+        "f1": 0.9289
+      },
+      "low light": {
+        "n": 165,
+        "TP": 95,
+        "FN": 13,
+        "FP": 3,
+        "TN": 52,
+        "precision": 0.9694,
+        "recall": 0.8796,
+        "f1": 0.9223
+      },
+      "shadow edge": {
+        "n": 153,
+        "TP": 95,
+        "FN": 10,
+        "FP": 3,
+        "TN": 40,
+        "precision": 0.9694,
+        "recall": 0.9048,
+        "f1": 0.936
+      }
+    }
+  },
+  "false_positive_scenes": {
+    "green_square|green_square": 2,
+    "plus_white|bullseye": 3,
+    "plus_white|green_tarp|plus_white": 1,
+    "green_square|green_tarp": 2,
+    "plus_white": 1,
+    "background only": 1
+  },
+  "miss_reasons": {
+    "best blob below confidence threshold": 4,
+    "best blob has 2 arms (need 4)": 8,
+    "best blob solidity 0.87 outside X range": 2,
+    "best blob solidity 0.85 outside X range": 1,
+    "best blob has 1 arms (need 4)": 6,
+    "accepted": 1,
+    "best blob solidity 0.98 outside X range": 3,
+    "best blob solidity 0.95 outside X range": 1,
+    "green blobs too small or too large": 1,
+    "best blob solidity 0.93 outside X range": 2,
+    "best blob solidity 0.97 outside X range": 1,
+    "best blob solidity 0.99 outside X range": 2,
+    "best blob solidity 0.88 outside X range": 2,
+    "best blob solidity 0.90 outside X range": 1
+  }
+}

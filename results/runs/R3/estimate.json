@@ -1,0 +1,18 @@
+{
+  "run_id": "R3",
+  "estimate": {
+    "north_m": 15.075497248963693,
+    "east_m": 9.023791832379416,
+    "lat": -35.36312717450406,
+    "lon": 149.16533690183323,
+    "detections_used": 103,
+    "detections_total": 103,
+    "t_first_detection_s": 27.742892265319824,
+    "t_estimate_s": 66.42101192474365
+  },
+  "search_time_s": 35.58141040802002,
+  "mission_time_s": 104.14536142349243,
+  "frames_processed": 731,
+  "detections": 113,
+  "mount": "rot0"
+}

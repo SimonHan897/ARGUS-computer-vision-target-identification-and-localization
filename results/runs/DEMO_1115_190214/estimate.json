@@ -1,0 +1,18 @@
+{
+  "run_id": "DEMO_1115_190214",
+  "estimate": {
+    "north_m": 27.971704282112054,
+    "east_m": -7.858743882464159,
+    "lat": -35.36301082590521,
+    "lon": 149.1651508317858,
+    "detections_used": 91,
+    "detections_total": 91,
+    "t_first_detection_s": 47.30836582183838,
+    "t_estimate_s": 80.65282249450684
+  },
+  "search_time_s": 43.07423162460327,
+  "mission_time_s": 125.79586052894592,
+  "frames_processed": 765,
+  "detections": 106,
+  "mount": "rot0"
+}

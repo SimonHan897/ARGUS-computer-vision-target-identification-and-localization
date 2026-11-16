@@ -1,0 +1,177 @@
+{
+  "overall": {
+    "n": 600,
+    "TP": 377,
+    "FN": 37,
+    "FP": 7,
+    "TN": 165,
+    "precision": 0.9818,
+    "recall": 0.9106,
+    "f1": 0.9449,
+    "center_px_err_median": 1.0,
+    "center_px_err_p95": 2.11,
+    "ground_err_m_median": 0.08,
+    "ground_err_m_p95": 0.194,
+    "ground_err_m_max": 0.621,
+    "partial_images": 16,
+    "partial_recall": 0.625,
+    "det_ms_median": 44.3,
+    "det_ms_p95": 205.6
+  },
+  "by": {
+    "altitude_m": {
+      "6.1-10": {
+        "n": 101,
+        "TP": 65,
+        "FN": 0,
+        "FP": 1,
+        "TN": 28,
+        "precision": 0.9848,
+        "recall": 1.0,
+        "f1": 0.9924
+      },
+      "10-15": {
+        "n": 111,
+        "TP": 77,
+        "FN": 1,
+        "FP": 1,
+        "TN": 30,
+        "precision": 0.9872,
+        "recall": 0.9872,
+        "f1": 0.9872
+      },
+      "15-20": {
+        "n": 130,
+        "TP": 87,
+        "FN": 3,
+        "FP": 2,
+        "TN": 36,
+        "precision": 0.9775,
+        "recall": 0.9667,
+        "f1": 0.9721
+      },
+      "20-30": {
+        "n": 258,
+        "TP": 148,
+        "FN": 33,
+        "FP": 3,
+        "TN": 71,
+        "precision": 0.9801,
+        "recall": 0.8177,
+        "f1": 0.8916
+      }
+    },
+    "ground": {
+      "asphalt": {
+        "n": 234,
+        "TP": 158,
+        "FN": 11,
+        "FP": 2,
+        "TN": 54,
+        "precision": 0.9875,
+        "recall": 0.9349,
+        "f1": 0.9605
+      },
+      "dirt": {
+        "n": 60,
+        "TP": 46,
+        "FN": 1,
+        "FP": 1,
+        "TN": 12,
+        "precision": 0.9787,
+        "recall": 0.9787,
+        "f1": 0.9787
+      },
+      "grass": {
+        "n": 222,
+        "TP": 127,
+        "FN": 20,
+        "FP": 4,
+        "TN": 67,
+        "precision": 0.9695,
+        "recall": 0.8639,
+        "f1": 0.9137
+      },
+      "mixed": {
+        "n": 84,
+        "TP": 46,
+        "FN": 5,
+        "FP": 0,
+        "TN": 32,
+        "precision": 1.0,
+        "recall": 0.902,
+        "f1": 0.9485
+      }
+    },
+    "condition": {
+      "clean": {
+        "n": 119,
+        "TP": 85,
+        "FN": 2,
+        "FP": 2,
+        "TN": 28,
+        "precision": 0.977,
+        "recall": 0.977,
+        "f1": 0.977
+      },
+      "blur/motion": {
+        "n": 390,
+        "TP": 231,
+        "FN": 33,
+        "FP": 5,
+        "TN": 113,
+        "precision": 0.9788,
+        "recall": 0.875,
+        "f1": 0.924
+      },
+      "low light": {
+        "n": 165,
+        "TP": 95,
+        "FN": 13,
+        "FP": 3,
+        "TN": 51,
+        "precision": 0.9694,
+        "recall": 0.8796,
+        "f1": 0.9223
+      },
+      "shadow edge": {
+        "n": 153,
+        "TP": 96,
+        "FN": 9,
+        "FP": 1,
+        "TN": 42,
+        "precision": 0.9897,
+        "recall": 0.9143,
+        "f1": 0.9505
+      }
+    }
+  },
+  "false_positive_scenes": {
+    "green_square|green_square": 2,
+    "plus_white|bullseye": 1,
+    "plus_white": 1,
+    "background only": 1,
+    "green_tarp|gcp": 1,
+    "gcp|plus_white|bullseye": 1
+  },
+  "miss_reasons": {
+    "best blob arms unevenly spaced (regularity 0.00)": 13,
+    "best blob arms unevenly spaced (regularity 0.51)": 1,
+    "best blob has 2 arms (need 4)": 4,
+    "best blob arms unevenly spaced (regularity 0.04)": 1,
+    "best blob has 1 arms (need 4)": 4,
+    "accepted": 1,
+    "best blob arms unevenly spaced (regularity 0.07)": 1,
+    "best blob arms unevenly spaced (regularity 0.16)": 1,
+    "best blob arms unevenly spaced (regularity 0.29)": 1,
+    "best blob arms unevenly spaced (regularity 0.47)": 1,
+    "best blob solidity 0.97 outside X range": 1,
+    "best blob arms unevenly spaced (regularity 0.13)": 1,
+    "best blob solidity 0.99 outside X range": 2,
+    "best blob arms unevenly spaced (regularity 0.22)": 1,
+    "best blob arms unevenly spaced (regularity 0.60)": 1,
+    "best blob solidity 0.98 outside X range": 1,
+    "best blob arms unevenly spaced (regularity 0.53)": 1,
+    "best blob arms unevenly spaced (regularity 0.38)": 1
+  }
+}
