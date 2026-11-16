@@ -5,10 +5,7 @@
 | **Procedure** | TP-ARGUS-CV-001 Rev A |
 | **Tester** | Simon Han |
 | **Date(s)** | Nov.15.2026 |
-| **ARGUS_2027 commit** | [ `git -C ~/ARGUS_2027 rev-parse --short HEAD` ] |
 | **ArduPilot / Gazebo** | Copter 4.6.3 SITL / Gazebo Harmonic (`Drone_Sim_Docker`) |
-| **Camera mount (from R0)** | [ `runs/mount.json` ] |
-| **Gimbal pitch used** | [ −1.5708 or +1.5708 ] |
 
 ## 1. Summary
 [ Two or three sentences: did the capability meet the requirements? Which runs passed or failed, and the headline numbers (final error, detection rate). ]
