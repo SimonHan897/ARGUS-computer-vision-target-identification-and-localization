@@ -1,14 +1,11 @@
 # Test Report TR-ARGUS-CV-001: Green-X Identification and Localization (SITL)
 
-*Fill in every `[ ]` from your own runs (`runs/analysis/RESULTS.md`, `summary.csv`, figures). Delete these italic notes when you're done.*
-
 | | |
 |---|---|
 | **Procedure** | TP-ARGUS-CV-001 Rev A |
 | **Tester** | Simon Han |
-| **Date(s)** | [ ] |
+| **Date(s)** | Nov.15.2026 |
 | **ARGUS_2027 commit** | [ `git -C ~/ARGUS_2027 rev-parse --short HEAD` ] |
-| **This repo commit** | [ ] |
 | **ArduPilot / Gazebo** | Copter 4.6.3 SITL / Gazebo Harmonic (`Drone_Sim_Docker`) |
 | **Camera mount (from R0)** | [ `runs/mount.json` ] |
 | **Gimbal pitch used** | [ −1.5708 or +1.5708 ] |
