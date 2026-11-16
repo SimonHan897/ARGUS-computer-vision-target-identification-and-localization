@@ -71,7 +71,7 @@ The camera mount isn't assumed. Run **R0** tries all 8 axis-aligned mounts and k
 | `run_test.py` | **PD 7 test run:** search → detect → geolocate → confirm → land, with full logs |
 | `analyze_runs.py` | **PD 7 analysis:** recompute everything from the logs, score TC1–TC6, make the figures and `RESULTS.md` |
 | `TEST_PROCEDURE.md` | **PD 7 formal test procedure** (requirements, test matrix, steps, pass/fail) |
-| `TEST_REPORT_TEMPLATE.md` | Report to fill in from your results |
+| `TEST_REPORT.md` | Completed PD 7 test report (SITL runs R1–R3) |
 | `tests/` | Geometry unit tests (the detector tests are in `../src/drone_target_cv/test/`) |
 | `setup_env.sh` | One-time host setup |
 
@@ -128,7 +128,7 @@ python3 analyze_runs.py R1 R2 R3
 | E6 | Analysis figures | `runs/analysis/*_map.png`, `all_runs_error.png`, `*_timeline.png` |
 | E7 | Detector in action | `runs/R*/snapshots/*.png`, `runs/R*/annotated.mp4` |
 | E8 | PD 5 metric and v1 → v2 improvement | `pd5_v1_vs_v2.png`, `eval_v2/pd5_metrics.png`, `eval_v2/pd5_examples_montage.png` |
-| E9 | Documents | `TEST_PROCEDURE.md`, the completed `TEST_REPORT_TEMPLATE.md` |
+| E9 | Documents | `TEST_PROCEDURE.md`, the completed `TEST_REPORT.md` |
 
 ## Troubleshooting
 
