@@ -170,7 +170,7 @@ R0 is only used to select the camera mount. It is reported, but it does not coun
 
 ## 12. Report
 
-Fill in `TEST_REPORT_TEMPLATE.md` using `RESULTS.md` and the figures. Include:
+The completed report is `TEST_REPORT.md`. It was written using `RESULTS.md` and the figures. Include:
 - versions (git commit of ARGUS_2027, ArduPilot version);
 - any deviations from this procedure;
 - the pass/fail table;
